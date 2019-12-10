@@ -3,16 +3,14 @@ var letter = function (randLetter) {
         this.guessed = false,
         this.letterPlaceholder = function () {
             if (this.guessed) {
-                console.log("Guesed correctly")
                 return this.underChar;
             }
             else if (!this.guessed) {
                 return "_";
             }
-
         },
         this.letterCheck = function (guess) {
-            if (guess === this.underChar) {
+            if (guess === this.underChar.toLowerCase()) {
                 this.guessed = true;
                 return this.letterPlaceholder();
             }
